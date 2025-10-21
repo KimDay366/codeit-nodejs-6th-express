@@ -1,0 +1,39 @@
+
+###
+# 기본 GET 
+GET http://localhost:3000/tasks
+
+# GET query paramiter를 넣은 경우
+# GET http://localhost:3000/tasks?sort=oldest
+# GET http://localhost:3000/tasks?count=5
+
+###
+# GET query paramiter를 모두 넣은 경우
+GET http://localhost:3000/tasks?sort=&count=5
+
+###
+# GET query paramiter 중 Id를 넣는 경우
+GET http://localhost:3000/tasks/68f6f332d1ee3a07b010b0ef
+
+###
+# POST 진행 해 보기
+POST http://localhost:3000/tasks
+Content-Type: application/json
+
+{
+    "title" : "Express 시작하기",
+    "description" : "Express를 활용하여 로컬에서 서버를 작업 해 봅니다"
+}
+
+###
+# PATCH 진행 해 보기
+PATCH http://localhost:3000/tasks/68f6e568d795a663a6649379
+Content-Type: application/json
+
+{
+    "title" : "타이틀 수정!!!!"
+}
+
+###
+# DELETE query paramiter로 Id를 넣어 실행
+DELETE http://localhost:3000/tasks/68f6e568d795a663a6649379
